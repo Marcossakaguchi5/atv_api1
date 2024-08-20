@@ -1,0 +1,36 @@
+@baseUrl = https://8080-marcossakaguchi-atvapi1-e9qmecxwmn2.ws-us115.gitpod.io
+
+###
+
+GET {{baseUrl}}/tarefa
+
+###
+
+
+GET {{baseUrl}}/tarefa/2
+
+
+###
+
+POST {{baseUrl}}/tarefa
+Content-type: application/json
+
+{
+    "descricao":"manbre 35",
+    "concluido":false
+}
+
+
+###
+
+
+PUT {{baseUrl}}/tarefa/3
+Content-type: application/json
+
+{
+    "descricao":"rogerio",
+    "concluido":true
+}
+###
+
+DELETE {{baseUrl}}/tarefa/2
