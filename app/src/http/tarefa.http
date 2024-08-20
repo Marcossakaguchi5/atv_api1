@@ -7,7 +7,7 @@ GET {{baseUrl}}/tarefa
 ###
 
 
-GET {{baseUrl}}/tarefa/2
+GET {{baseUrl}}/tarefa/3
 
 
 ###
@@ -16,20 +16,20 @@ POST {{baseUrl}}/tarefa
 Content-type: application/json
 
 {
-    "descricao":"manbre 35",
-    "concluido":false
+    "descricao":"manbre 85",
+    "concluido":true
 }
 
 
 ###
 
 
-PUT {{baseUrl}}/tarefa/3
+PUT {{baseUrl}}/tarefa/4
 Content-type: application/json
 
 {
     "descricao":"rogerio",
-    "concluido":true
+    "concluido":false
 }
 ###
 

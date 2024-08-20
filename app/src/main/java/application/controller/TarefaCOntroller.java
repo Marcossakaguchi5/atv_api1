@@ -33,7 +33,7 @@ public class TarefaCOntroller {
     public Tarefa details(@PathVariable long id){
         Optional<Tarefa> resultado = tarefaRepo.findById(id);
         if(resultado.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Aluno nao emcontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"tarefa nao emcontrada");
         }
         return resultado.get();
     }
@@ -51,10 +51,10 @@ public class TarefaCOntroller {
         ){
         Optional<Tarefa> resultado= tarefaRepo.findById(id);
         if(resultado.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"tarefa nao emcontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"tarefa nao encontrada");
         }
         if(novosDados.getDescricao().isEmpty()){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"NOme do tarefa nao encontrada");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"tarefa do tarefa nao encontrada");
         }
         resultado.get().setDescricao(novosDados.getDescricao());
         resultado.get().setConcluido(novosDados.getConcluido());
@@ -64,7 +64,7 @@ public class TarefaCOntroller {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id){
         if(!tarefaRepo.existsById(id)){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"tarefa nao emcontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"tarefa nao encontrada");
         }
         tarefaRepo.deleteById(id);
 
